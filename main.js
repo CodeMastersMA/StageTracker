@@ -9,6 +9,7 @@ const reponse = await fetch("https://public.opendatasoft.com/api/explore/v2.1/ca
 const ods = await reponse.json()
 
 //IMPORT FUNCTIONS
+import { cardFilter } from "./cardFilters.js"
 import * as fnct from "/cardShow.js"
 
 
@@ -18,22 +19,30 @@ const list = ods.results
 
 
 //LOAD DE LA PAGE DE BASE
-document.querySelector("#nbrShow").textContent=`Nombre de concerts: ${ods.total_count}`
+document.querySelector("#nbrShow").textContent=`Nombre de concerts: ${list.length}`
 fnct.cardLoad(list)
 //A FINIR: POP OVER POUR LES INFO SUPP
 //document.querySelector("#cards").addEventListener('click', fnct.cardPopOver(1,list))
+
+//CHANGEMENT DE FILTRES
+let listeFiltre;
 document.querySelector("#filterForm").addEventListener('change', function(){
-    console.log(document.querySelector("#dateFilterMonth").value)
-    document.querySelector("#checkGFilter").value
-    if(document.querySelector("#checkGFilter").value){}
-})
+
+    if(document.querySelector("#filterGen").checked){
+        listeFiltre = []
+        cardFilter(list,listeFiltre)
+        document.querySelector("#section").innerHTML=`<ul id="section"></ul>`
+        document.querySelector("#nbrShow").textContent=`Nombre de concerts: ${listeFiltre.length}`
+        fnct.cardLoad(listeFiltre)
+    }})
 
 
 
 
 
 
-/*boutton de test du json*/document.querySelector("#test").addEventListener("click", () => console.log(ods) )
+/*boutton de test du json, Mettre un console log si besoin*/
+document.querySelector("#test").addEventListener("click", () => {} )
 
 
 
