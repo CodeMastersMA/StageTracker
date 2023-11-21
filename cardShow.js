@@ -7,7 +7,9 @@ export function cardLoad(list){
     {list.forEach(element => {
         const section = document.querySelector("#section")
         const card = document.createElement("div")
+        //REMPLACEMENT SI LES IMAGES NE SONT PAS VALIDES
         if(element.image){}else{element.image="https://static.vecteezy.com/ti/vecteur-libre/p3/6122514-musique-concert-scene-fond-vectoriel.jpg"}
+        
         card.innerHTML=`
         <li><div id="cards"><div class="card" id="${element.uid}" style="width: 18rem;"><p>${element.daterange_fr}</p>
         <img id="img" src="${element.image}" class="card-img-top" alt="">
