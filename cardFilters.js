@@ -6,17 +6,17 @@ let date = document.querySelector("#dateFilterMonth").value
 
 list.forEach(element => {
     if (dateCheck){
-        let input = document.querySelector("#dateFilterMonth").value
+
         let stageDate = element.firstdate_begin.slice(0,7)
-        if (input===stageDate){
+        if (date===stageDate){
             listeFiltre.push(element)
  
             
         }
         
-    }else {listeFiltre = list}
+    }
     
 });
-return listeFiltre;
+
 
 }

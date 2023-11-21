@@ -14,7 +14,6 @@ import * as fnct from "/cardShow.js"
 
 
 //INIT VARIABLES
-console.log(ods)
 const list = ods.results
 
 
@@ -33,16 +32,20 @@ document.querySelector("#filterForm").addEventListener('change', function(){
         cardFilter(list,listeFiltre)
         document.querySelector("#section").innerHTML=`<ul id="section"></ul>`
         document.querySelector("#nbrShow").textContent=`Nombre de concerts: ${listeFiltre.length}`
-        fnct.cardLoad(listeFiltre)
-    }})
+
+    }
+    console.log(listeFiltre[0])
+    if (!listeFiltre[0]){listeFiltre = list}
+    fnct.cardLoad(listeFiltre)
+})
 
 
 
 
 
 
-/*boutton de test du json, Mettre un console log si besoin*/
-document.querySelector("#test").addEventListener("click", () => {} )
+
+
 
 
 
