@@ -11,36 +11,73 @@
 
 
 
-    <nav class="navbar navbar-expand-lg text-bg-dark p-3">
+    <nav class="fixed-top navbar navbar-expand-lg text-bg-dark p-3">
         <div class="container-fluid position-relative">
           <a class="navbar-brand position-absolute top-50 start-50 translate-middle text-bg-dark" href="#">Stage Tracker</a>
-          </button>
-          <form class="d-flex" role="search">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-light" type="submit">Search</button>
-          </form>
+          <button class="btn btn-outline-light" type="submit" onclick="alert('Ce boutton est inutile')">o</button>
+          
+            
         </div>
     </nav>
 
     <div class="row">
-        <div class="col-md-2 bg-light">  
-            <form id="filterForm">
-                <input type="checkbox" id="filterGen" name="checkGFilter" class="ms-5">
+        <div class="col-md-2 bg-light fixed-bottom">  
+            <form id="filterForm" class="form-control mt-5">
+                <p>Recherche par titre:</p>
+                <input class="form-control me-2" type="search" placeholder="Search" id="searchTitle" aria-label="Search">
+                <p>Recherche par mot clé:</p>
+                <input class="form-control me-2" type="search" placeholder="Search" id="search" aria-label="Search">
+
+
+
+
+
+                <input type="checkbox" id="filterGen" name="checkGFilter" class="ms-5 mt-5">
                 <label for="checkGFilter">Filtrer</label>
                 <br>
-                <input type="checkbox" id="checkDateFilter"class="mx-2">
-                <label for="checkDateFilter">Date:</label>
-                <input type="month" class="form-control mx-2" id="dateFilterMonth">
+                <p class="mx-2 mt-5">Trier par date:</p>
+                <input type="checkbox" id="checkMonthFilter"class="mx-2">
+                <label for="checkMonthFilter">Selection par mois:</label>
+                <!--Oui, j'ai la flemme de mettre a la date actuelle donc ce sera de base à nov 2023-->
+                <input type="month" class="form-control mx-2" value="2023-11" id="dateFilterMonth">
+                
+                <!--BOUTTONS POUR MOTS CLES-->
+                <a class="btn btn-secondary" data-bs-toggle="collapse" href="#collapseFilter" role="button" aria-expanded="false" aria-controls="collapseExample">
+                    Filtres
+                  </a>
+                  
+                  <div class="collapse" id="collapseFilter">
+                    <a class="" data-bs-toggle="collapse" href="#collapsePublic" role="button" aria-expanded="false" aria-controls="collapseExample">
+                        <p>Public ></p></a>
+                        <div class="collapse" id="collapsePublic">
+                            <input type="checkbox" id="ttpublc"class="mx-2 checkFilterKW1" value="Tout Public"><label for="ttpublc">Tout Public</label><br>
+                            <input type="checkbox" id="16 ans"class="mx-2 checkFilterKW2" value="16 ans"><label for="16 ans">+16 ans</label><br>
+                            <input type="checkbox" id="Parents"class="mx-2 checkFilterKW3" value="parents"><label for="Parents">Parents</label><br>
+                        </div>
+                    <a class="" data-bs-toggle="collapse" href="#collapseType" role="button" aria-expanded="false" aria-controls="collapseExample">
+                        <p>Type ></p></a>
+                        <div class="collapse" id="collapseType">
+                            <input type="checkbox" id="Conférences"class="mx-2 checkFilterKW4" value="conférence"><label for="Conférences">Conférences</label><br>
+                            <input type="checkbox" id="Musique"class="mx-2 checkFilterKW5" value="musique"><label for="Musique">Musique</label><br>
+                            <input type="checkbox" id="Spectacle"class="mx-2 checkFilterKW6" value="spectacle"><label for="Spectacle">Spectacle</label><br>
+                        </div>
+
+                  </div>
             </form>
 
+
+            <!--<div class="collapse" id=""><input type="checkbox" id="CHECKBOXNAME"class="mx-2 checkFilterKW" value=""><label for="CHECKBOXNAME">CHECKBOXNAME</label></div>-->
 
            <!-- <button id="test">Is it working?</button>
             <button id="cards">Fake card?</button>-->
         </div>
+        <div class="col-md-2 bg-light"> 
+        </div>
     
         <div class="col-md-8">
             <div class="container text-center">
-                <p id="nbrShow">Nombre de concerts: </p>
+                <br class="my-5">
+                <p id="nbrShow" class="mt-5">Nombre de concerts: </p>
                 <h2 id="alerte"></h2>
                 <div class="row">
                     <div class="serv">
