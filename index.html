@@ -23,7 +23,21 @@
     </nav>
 
     <div class="row">
-        <div class="col-md-2 bg-light">  <button id="test">Is it working?</button></div>
+        <div class="col-md-2 bg-light">  
+            <form id="filterForm">
+                <input type="checkbox" id="filer" name="checkGFilter" class="ms-5">
+                <label for="checkGFilter">Filtrer</label>
+                <br>
+                <input type="checkbox" id="checkDateFilter"class="mx-2">
+                <label for="checkDateFilter">Date:</label>
+                <input type="month" class="form-control mx-2" id="dateFilterMonth">
+            </form>
+
+
+            <button id="test">Is it working?</button>
+            <button id="cards">Fake card?</button>
+        </div>
+    
         <div class="col-md-8">
             <div class="container text-center">
                 <p id="nbrShow">Nombre de concerts: </p>
