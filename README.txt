@@ -16,6 +16,9 @@ Fonctionnalités et features actuelles:
     -Affichage des cartes évenements demandées
     -Interface fluide et ésthetique
 
+Bug a fixer:
+    Les filtres de dates ne s'aditionnent pas aux filtres de Noms
+
 Fonctionnalités futures:
     1 Zone de recherche par région 
     2 API permettant d'interpréter les mot clés afin de faire correspondre les titres et mots clés avec une marge d'erreur
