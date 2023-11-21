@@ -9,12 +9,14 @@ const reponse = await fetch("https://public.opendatasoft.com/api/explore/v2.1/ca
 const ods = await reponse.json()
 //IMPORT FUNCTIONS
 import * as fnct from "/cardShow.js"
+
 //INIT VARIABLES
 console.log(ods)
 const list = ods.results
 
 
 //LOAD DE LA PAGE DE BASE
+document.querySelector("#nbrShow").textContent=`Nombre de concerts: ${ods.total_count}`
 fnct.cardLoad(list)
 
 
